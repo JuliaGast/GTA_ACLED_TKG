@@ -1,7 +1,8 @@
+
 # GTA_ACLED_TKG
 
 ## Sparql Queries:
-*TODO Lorenz? 
+*TODO Lorenz?  - see readme in folder queries
 
 ## Timestep Assignment:
 * Run ts_assignment_gta_star.py and ts_assignment_acled.py to read the .nt files and assign timesteps
