@@ -6,6 +6,7 @@
 
 ## Running
 
+## Run for selected relations only
 
 ## Hyperparameters
 
