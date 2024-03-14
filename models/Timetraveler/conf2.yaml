@@ -20,10 +20,10 @@ hydra:
       lr: choice(0.001, 0.00001)
 data_path: crisis2023 #help='Path to data.
 cuda: True # help='whether to use GPU or not.') 
-do_train: False #help='whether to train.') 
+do_train: True #help='whether to train.') 
 do_test: True # help='whether to test.') 
 save_path: logs3 #', type=str, help='log and model save path.')
-load_model_path: logs3 #logs3 #help='trained model checkpoint path.')
+load_model_path: None #logs3 #help='trained model checkpoint path.')
 batch_size: 512 #, type=int, help='training batch size.')
 max_epochs: 400 #400 #, type=int, help='max training epochs.') 
 num_workers: 8 #, type=int, help='workers number used for dataloader.')
