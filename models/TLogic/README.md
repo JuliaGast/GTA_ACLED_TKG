@@ -1,7 +1,36 @@
 # TLogic: Temporal Logical Rules for Explainable Link Forecasting on Temporal Knowledge Graphs
-
 This repository contains the code for the paper [TLogic: Temporal Logical Rules for Explainable Link Forecasting on Temporal Knowledge Graphs](https://arxiv.org/abs/2112.08025).
+https://github.com/liu-yushan/TLogic
 
+## Preparations for GTA_ACLED
+To run this code for the given GTA_ACLED Use Case copy the data from the data folder to this folder 
+```/data/crisis2023```
+
+install the dependencies as mentioned below 
+
+```cd mycode```
+
+#### Learn Rules:
+```
+python learn.py -d crisis2023 -l 1 -n 200 -p 5
+```
+#### Apply Rules:
+
+```
+python apply.py -d icews14 -r 0_r[1]_n200_exp_sNone_rules.json -l 1  -w 0 -p 8
+```
+#### Evaluate:
+
+This will create a pkl file with predictions for each test triple and store it to the folder 'results'. copy this file to  'evaluation/TLogic' to create a unified evaluation.
+
+#### Hyperparameter Range GTA_ACLED
+
+Please find the hyperparameter range in ```mycode/hyperparameters.txt```
+We changed the hyperparameter default values to the values reported in our paper.
+
+
+
+## Original TLogic Readme:
 
 <h3> How to run </h3>
 
