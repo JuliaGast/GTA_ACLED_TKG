@@ -6,23 +6,32 @@ Zixuan Li, Xiaolong Jin, Wei Li, Saiping Guan, Jiafeng Guo, Huawei Shen, Yuanzhu
 
 <img src="https://github.com/Lee-zix/RE-GCN/blob/master/img/regcn.png" alt="regcn_architecture" width="700" class="center">
 
-## Preparations
-To run this code for the given ACLED_GTA Use Case copy the data from the data folder to this folder 
-'/data/crisis2023'
+## Preparations for GTA_ACLED
+To run this code for the given GTA_ACLED Use Case copy the data from the data folder to this folder 
+```/data/crisis2023```
 
 install the dependencies as mentioned below
 
-cd src
+```cd src```
+
+Train:
+```
 python main.py -d crisis2023 
 ```
-
+Test:
+```
 python main.py -d crisis2023 --test
 ```
+Evaluate:
 
 This will create a pkl file with predictions for each test triple and store it to the folder 'results'. copy this file to the 'evaluation' to create a unified evaluation
 
+## Hyperparameter Range GTA_ACLED
 
-## Quick Start
+Please find the hyperparameter range in ```src\hyperparameter_range.py```
+We changed the hyperparameter default values to the values reported in our paper.
+
+## Quick Start (original RE_GCN paper)
 
 ### Environment variables & dependencies
 ```
