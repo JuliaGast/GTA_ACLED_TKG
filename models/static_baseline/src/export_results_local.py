@@ -61,7 +61,7 @@ def main(config:DictConfig, result_file_name): #'results_log.json'):
 
     dataset_name = config.dataset['name']
 
-    with open("all_results_feb_"+dataset_name+".csv", 'a') as csvFile:
+    with open("all_results_"+dataset_name+".csv", 'a') as csvFile:
             wr = csv.DictWriter(csvFile, fieldnames=list(new_table_row.keys()))
             # wr.writeheader() #use when first writing
             wr.writerow(new_table_row )    
@@ -83,7 +83,7 @@ def write(config:DictConfig, result_file_name, dataset=None): #'results_log.json
     # Build new table row
     # new_table_row = _build_new_table_row(result_file_path, config)
 
-    with open("all_results_feb_"+dataset_name+".csv", 'a') as csvFile:
+    with open("all_results_"+dataset_name+".csv", 'a') as csvFile:
             wr = csv.DictWriter(csvFile, fieldnames=list(new_table_row.keys()))
             # wr.writeheader() #use when first writing
             wr.writerow(new_table_row )    
