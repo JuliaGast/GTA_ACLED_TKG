@@ -20,4 +20,4 @@
 * Run tkg_analysis.py to extract Parameters such as Recurrency Degree and Consecutiveness Degree
 
 ## TKG Forecasting:
-TODO describe
+All models are in the folder ```models```. Follow the instructions in the respective ```README.md```.
