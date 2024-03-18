@@ -161,14 +161,6 @@ def store_graph(current_graph,  time_to_id_ourinterval, t, data_type='train', lo
     snap['ts'] = time_to_id_ourinterval[t]*np.ones(len(current_graph[0])).astype(int)
     file_path = location + '/' + task_name +  '/' + data_type+ '_names.txt'
     snap.to_csv(file_path, sep='\t', mode='a', header=False, index=False)
-    # with open(location + '/' + task_name +  '/' + data_type+ '_names.txt', 'a') as file: # write current graph to txt file (append)
-    #     snap = copy(current_graph)
-    #     snap['ts'] = time_to_id_ourinterval[t]*np.ones(len(current_graph[0])).astype(int)
-    #     snstr = snap.to_string(header=False, index=False)
-
-    #     file.write(snstr)
-    #     df.to_csv(file_path, sep='\t', mode='a', header=False, index=False)
-    #     file.write("\n")
 
 def store_ids(current_graph, node_to_id, rel_to_id, time_to_id_ourinterval, t, data_type='train', location="./data", task_name='/crisis_merged/'):
     # with open(location + '/' + task_name +  '/' + data_type+'.txt', 'a') as id_file: #write current graph (ids) to txt file

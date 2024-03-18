@@ -1,0 +1,26 @@
+# GTA_ACLED_TKG
+
+## Steps for reproduction:
+### 1. Sparql Queries:
+*TODO Lorenz? 
+
+### 2. Timestep Assignment:
+* Run 'dataset_preprocessing/ts_assignment_gta_star.py' and 'dataset_preprocessing/ts_assignment_acled.py' to read the .nt files and assign timesteps
+* This requires the rdflib package, that can be downloaded here https://github.com/XuguangSong98/rdflib and put into the data_preprocessing folder. Processing data with this package very slow and can take hours to days.
+* The output are csv files that can be found in /data/acled and /data/gta respectively
+
+### 3.  Merge the two datasets:
+* Run 'dataset_preprocessing/merke-tkg-from-gta-acled.py' to merge both subsets and create train, valid, test.txt
+* Specify timerange of interest. In our case this is 2023-01-01 – 2023-12-31
+* Split dataset based on timesteps. Specify train/valid/test split. In our case it is 80/10/10
+* Automatically stores the resulting files in /data/crisis2023
+
+### 4. Dataset Analysis:
+* Run 'dataset_preprocessing/analysis.py' to plot figures of graph parameters over time
+* Run 'dataset_preprocessing/tkg_analysis.py' to extract Parameters such as Recurrency Degree and Consecutiveness Degree
+
+### 5. TKG Forecasting:
+TODO describe
+
+### 6. Result Analysis:
+TODO describe
