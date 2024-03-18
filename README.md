@@ -4,6 +4,9 @@
 This is the code to the paper Dynamic Representations of Global Crises: A Temporal Knowledge Graph For Conflicts, Trade and Value Networks
 We well add the authors after review period has passed.
 
+In the following we describe the steps needed to reproduce our results. It is splot in two parts, 1. Dataset Preprocessing and 2. TKG Forecasting.
+It is not required to re-run the Dataset Preprocessing Steps. We provide the output of Dataset Preprocessing in ```/data/crisis2023```. These files can be used for TKG Forecasting.
+
 ## 1. Dataset Preprocessing 
 ### Sparql Queries:
 *TODO Lorenz?  - see readme in folder queries
