@@ -25,3 +25,7 @@
 
 ## 2. TKG Forecasting:
 All models for TKG Forecasting are in the folder ```models```. Follow the instructions in the respective ```README.md```.
+
+
+## 3. Result Evaluation:
+The code for evaluating the results for TKG Forecasting are in the folder ```result_evaluation.py```. Follow the instructions in the respective ```README.md```.
