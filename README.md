@@ -15,7 +15,7 @@
 * What it does:
  * Specify timerange of interest. In our case this is 2023-01-01 – 2023-12-31
  * Split dataset based on timesteps. Specify train/valid/test split. In our case it is 80/10/10
- * Automatically stores the resulting files in ```/data/crisis_merged2023-01-012023-12-31```
+ * Automatically stores the resulting files in ```/data/crisis2023```
 * It produces various files:
   * ```train.txt```, ```valid.txt```, ```test.txt```: one line per quadruple, quadruples as ```subject_id, relation_id, object_id, timestamp``` (from 0 to num_timesteps), ```original_dataset_id``` (0: gta, 1: acled)
   * ```train_names.txt```, ```valid_names.txt```, ```test_names.txt```: one line per quadruple with string description for each node and relation; ```subject_string, relation_string, object_string, original_dataset_id, timestamp``` (from 0 to num_timesteps)

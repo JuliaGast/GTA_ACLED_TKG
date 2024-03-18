@@ -70,8 +70,8 @@ added_dict = create_dicts_from_df(datasetid_gta, datasetid_acled)
 # 1) create a list  with all possible timesteps, and timesteps of interest
 start_range="2023-01-01"
 end_range="2023-12-31"
-folder_name +=start_range
-folder_name +=end_range
+folder_name += '2023' #start_range
+# folder_name +=end_range
 if not os.path.exists(data_loc + '/' + folder_name):
     os.mkdir(data_loc + '/' + folder_name)
 print('make sure the out-files do not exist yet, results will be appended!, foldername: ', data_loc + '/' + folder_name)
