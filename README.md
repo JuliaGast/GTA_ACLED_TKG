@@ -1,6 +1,9 @@
 
 # GTA_ACLED_TKG
 
+This is the code to the paper Dynamic Representations of Global Crises: A Temporal Knowledge Graph For Conflicts, Trade and Value Networks
+We well add the authors after review period has passed.
+
 ## 1. Dataset Preprocessing 
 ### Sparql Queries:
 *TODO Lorenz?  - see readme in folder queries
