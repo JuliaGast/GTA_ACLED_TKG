@@ -27,6 +27,7 @@ It is not required to re-run the Dataset Preprocessing Steps. We provide the out
   * ```train_names.txt```, ```valid_names.txt```, ```test_names.txt```: one line per quadruple with string description for each node and relation; ```subject_string, relation_string, object_string, original_dataset_id, timestamp``` (from 0 to num_timesteps)
   * ```id_to_node.json``` and ```id_to_rel.json```: contains dicts with mappings from ```"node_id"``` to ```node_string```, and ```"relation_id"``` to ```relation string```.
   * ```node_to_id.json``` and ```rel_to_id.json```: contains dicts with mappings from ```node_string``` to ```"node_id"```, and ```relation string``` to "relation_id" .
+  * ```stat.txt```: two entries, number of nodes, number of distinct relations
 
 
 ## 2. TKG Forecasting:
