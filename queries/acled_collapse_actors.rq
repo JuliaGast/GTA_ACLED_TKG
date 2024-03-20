@@ -1,0 +1,62 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX coy: <https://schema.coypu.org/global#>
+PREFIX acled: <https://schema.coypu.org/acled#>
+
+CONSTRUCT {
+  ?a1_c ?a1_rel_event_c ?e_c {|coy:hasTimestamp ?t|} .
+  ?a1_c ?a1_rel_event_t ?e_type {|coy:hasTimestamp ?t|} .
+  
+  ?a2_c ?a2_rel_event_c ?e_c {|coy:hasTimestamp ?t|} .
+  ?a2_c ?a2_rel_event_t ?e_type {|coy:hasTimestamp ?t|} .
+  
+  
+}
+WHERE {
+
+SELECT 
+DISTINCT
+#?e
+?t
+?e_c 
+?e_type
+?a1_c
+?a1_rel_event_c
+?a1_rel_event_t
+?a2
+?a2_c
+?a2_rel_event_c
+?a2_rel_event_t
+WHERE {
+#  BIND(<https://data.coypu.org/country/DEU> AS ?e_c)
+  ?e a coy:Conflict ;
+      a ?e_type ;
+      coy:hasCountryLocation ?e_c ;
+      coy:hasTimestamp ?t .
+  FILTER(?e_type NOT IN (coy:Event, coy:Conflict))
+  
+  # actor 1
+  ?e coy:hasActor ?a1 .
+#  BIND(acled:StateForces AS ?a1_type)
+  ?a1 a ?a1_type .
+  ?a1 coy:hasCountryLocation ?a1_c .
+  BIND(IRI(CONCAT(STR(acled:), REPLACE(STR(?a1_type), STR(acled:), ""), "ActIn")) AS ?a1_rel_event_c)
+  BIND(IRI(CONCAT(STR(acled:), REPLACE(STR(?a1_type), STR(acled:), ""), "Action")) AS ?a1_rel_event_t)
+  
+  # actor 2
+  OPTIONAL {
+    ?e coy:hasActor ?a2 .
+    ?a2 a ?a2_type .
+#    FILTER(?a1 != ?a2 && str(?a1) > str(?a2))
+    FILTER(?a1 != ?a2)
+    OPTIONAL {
+      ?a2 coy:hasCountryLocation ?a2_c .
+    }
+    BIND(IRI(CONCAT(STR(acled:), REPLACE(STR(?a2_type), STR(acled:), ""), "ActIn")) AS ?a2_rel_event_c)
+    BIND(IRI(CONCAT(STR(acled:), REPLACE(STR(?a2_type), STR(acled:), ""), "Action")) AS ?a2_rel_event_t)
+  }
+#  FILTER(!BOUND(?a2) || (?a1 != ?a2 && str(?a1) > str(?a2)))
+  
+} 
+#LIMIT 1000
+}

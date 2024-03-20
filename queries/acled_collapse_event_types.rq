@@ -1,0 +1,37 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX coy: <https://schema.coypu.org/global#>
+PREFIX acled: <https://schema.coypu.org/acled#>
+
+CONSTRUCT {
+  ?c acled:isAffectedByEventOfType ?type {|coy:hasTimestamp ?t|} .
+  
+}
+WHERE {
+  SELECT 
+  DISTINCT
+  ?c 
+  ?type 
+  ?t
+  WHERE {
+#  BIND(<https://data.coypu.org/country/DEU> AS ?c)
+    ?s a coy:Conflict ;
+  a ?type ;
+  coy:hasCountryLocation ?c ;
+  coy:hasTimestamp ?t .
+    FILTER(?type NOT IN (coy:Event, coy:Conflict))
+    
+    # actor 1
+#    BIND(acled:StateForces AS ?a1_type)
+    ?s coy:hasActor ?a1 .
+    ?a1 a ?a1_type .
+    
+    # actor 2
+    OPTIONAL {
+      ?s coy:hasActor ?a2 .
+      ?a2 a ?a2_type .
+       FILTER(?a1 != ?a2)
+      #FILTER(?a1 != ?a2 && str(?a1) > str(?a2))
+    }
+  }# LIMIT 10
+}
