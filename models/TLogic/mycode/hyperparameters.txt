@@ -1,0 +1,5 @@
+rule_lengths 1, 1 2, 1 2 3, 2, 3
+num_walks 100 200
+transisition_distr unif exp
+window 0 200 1000
+top_k 20
