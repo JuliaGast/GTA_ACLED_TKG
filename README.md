@@ -9,7 +9,7 @@ It is not required to re-run the Dataset Preprocessing Steps. We provide the out
 
 ## 1. Dataset Preprocessing 
 ### Sparql Queries:
-*TODO Lorenz?  - see readme in folder queries
+* Please see README.md in folder ```queries```
 
 ### Timestep Assignment:
 * Run ```python3 ./data_preprocessing/ts_assignment_gta_star.py``` and ```python3 /data_preprocessing/ts_assignment_acled.py``` to read the .nt files and assign timesteps
