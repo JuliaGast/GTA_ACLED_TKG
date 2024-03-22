@@ -3,7 +3,6 @@ This directory contains SPARQL `CONSTRUCT` queries and SPARQL Update statements 
 * year based data
 * subset of TKG relevant properties
 * aggregated data (sectors, products)
-* 
 
 based on the corresponding dataset
 

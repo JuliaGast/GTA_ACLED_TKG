@@ -11,7 +11,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX gta: <https://schema.coypu.org/gta#>
 
 
-DROP GRAPH <https://data.coypu.org/gta/>;
+DROP GRAPH <https://data.coypu.org/gta/2023/>;
 
 LOAD <https://gitlab.com/coypu-project/coy-ontology/-/raw/main/sectors/data/cpc21_data.ttl> INTO GRAPH <https://data.coypu.org/products/cpc21/>;
 
@@ -19,7 +19,7 @@ LOAD <https://gitlab.com/coypu-project/coy-ontology/-/raw/main/sectors/data/hs20
 
 
 INSERT {
-GRAPH <https://data.coypu.org/gta/> {
+GRAPH <https://data.coypu.org/gta/2023/> {
   ?a a gta:StateAct ;
    gta:hasAnnouncementDate ?date ;
    gta:hasIntervention ?i .
@@ -41,7 +41,8 @@ WHERE {
   ?a a gta:StateAct ;
            gta:hasAnnouncementDate ?date ;
            gta:hasIntervention ?i .
-     
+  FILTER(year(?date) = 2023)   
+  
   ?i a gta:Intervention ;
         gta:hasAffectedCommercialFlow  ?i_flow ;
         gta:hasGTAEvaluation           ?i_eval ;
@@ -57,7 +58,7 @@ WHERE {
 
 
 # aggregate the products
-WITH <https://data.coypu.org/gta/>
+WITH <https://data.coypu.org/gta/2023/>
 DELETE {
 ?i gta:hasAffectedProduct ?p ;
 }
@@ -72,7 +73,7 @@ INSERT {
 
 
 # aggregate the sectors
-WITH <https://data.coypu.org/gta/>
+WITH <https://data.coypu.org/gta/2023/>
 DELETE {
 ?i gta:hasAffectedSector ?s ;
 }
