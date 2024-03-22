@@ -1,4 +1,4 @@
-# triples for ACLED events in year 2021
+# triples for ACLED events in year 2023
 # graph depth is 2
 # ACLED event triples as well as the 2-hop triples (e.g. triples about the actors)
 
@@ -13,15 +13,15 @@ CONSTRUCT {
 } WHERE {
   {
     SELECT DISTINCT ?e ?type WHERE {
-      graph <https://data.coypu.org/events/acled/> {
+      #graph <https://data.coypu.org/events/acled/> {
         ?e rdf:type coy:Event ;
            rdf:type ?type ;
      	   coy:hasTimestamp ?t .
         BIND(year(?t) as ?year)
-        FILTER(?year = 2021)
+        FILTER(?year = 2023)
         FILTER(?type not in (coy:Event, coy:Conflict)) # keep only the ACLED specific type, e.g. coy:Protest
       }
-    }
+    #}
   }
   
   ?e ?p ?o

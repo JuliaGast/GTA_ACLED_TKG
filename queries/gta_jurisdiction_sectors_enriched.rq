@@ -7,19 +7,17 @@ CONSTRUCT {
  ?edge1 gta:hasAnnouncementDate ?date .
  ?edge2 gta:hasAnnouncementDate ?date .
 } WHERE {
-SELECT * WHERE {
   GRAPH <https://data.coypu.org/gta/> {
-  {SELECT * {?a a gta:StateAct .} LIMIT 10000}
-  ?a gta:hasAnnouncementDate ?date .
-  ?a gta:hasIntervention ?i .
-  ?i gta:hasAffectedSector ?s .
-  GRAPH <https://data.coypu.org/products/cpc21/> {?s skos:broader ?ss . }
-  
-  ?i gta:hasImplementingJurisdiction ?ij .
-  ?i gta:hasAffectedJurisdiction ?aj .
-  
-  BIND(<< ?ij gta:isImplementingInterventionOnSector ?ss >> AS ?edge1)
-  BIND(<< ?aj gta:isAffectedByInterventionOnSector ?ss >> AS ?edge2)
-}
-}
+	  ?a a gta:StateAct .
+	  ?a gta:hasAnnouncementDate ?date .
+	  ?a gta:hasIntervention ?i .
+	  ?i gta:hasAffectedSector ?s .
+	  GRAPH <https://data.coypu.org/products/cpc21/> {?s skos:broader ?ss . }
+	  
+	  ?i gta:hasImplementingJurisdiction ?ij .
+	  ?i gta:hasAffectedJurisdiction ?aj .
+	  
+	  BIND(<< ?ij gta:isImplementingInterventionOnSector ?ss >> AS ?edge1)
+	  BIND(<< ?aj gta:isAffectedByInterventionOnSector ?ss >> AS ?edge2)
   }
+}
