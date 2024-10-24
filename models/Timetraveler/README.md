@@ -61,7 +61,7 @@ python3 preprocess_data.py --data_dir data/ICEWS14
 If you use the reward shaping module, you need to do this step.
 
 ```
-python3 mle_dirichlet.py --data_dir data/ICEWS14 --time_span 24
+python3 mle_dirichlet.py --data_dir data/ --time_span 24
 ```
 
 #### Train
