@@ -454,11 +454,11 @@ if __name__ == '__main__':
 
     logging.debug('Note: Results for YAGO, WIKI and GDELT have been reported without the static graph constraint as they are missing in the dataset itself.')
 
-    parser.add_argument("--gpu", type=int, default=5,
+    parser.add_argument("--gpu", type=int, default=1,
                         help="gpu")
     parser.add_argument("--batch-size", type=int, default=1, #500,
                         help="batch-size")
-    parser.add_argument("-d", "--dataset", type=str,  default='crisis2023_gta', #ICEWS14', #required=True,
+    parser.add_argument("-d", "--dataset", type=str,  default='crisis2023', #ICEWS14', #required=True,
                         help="dataset to use")
     parser.add_argument("--test", action='store_true', default=False,
                         help="load stat from dir and directly test")
