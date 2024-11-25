@@ -2,7 +2,7 @@
 #  *    Dynamic Representations of Global Crises: A Temporal Knowledge Graph For Conflicts, Trade and Value Networks
 #  *
 #  *        File: ts_assignment_acled_star_actor.py
-Authors: Julia Gastinger (julia.gastinger@uni-mannheim.de), Timo Sztyler (timo.sztyler@neclab.eu), 
+Authors: Julia Gastinger (julia.gastinger (at) uni-mannheim.de), Timo Sztyler (timo.sztyler (at) neclab.eu), 
 Nils Steinert, Sabine Gruender-Fahrer, Michael Martin, Anett Schuelke, Heiner Stuckenschmidt 
   
 NEC Laboratories Europe GmbH, Copyright (c) 2024, All rights reserved.  
