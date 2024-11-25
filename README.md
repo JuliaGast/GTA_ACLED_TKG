@@ -1,10 +1,20 @@
 
 # GTA_ACLED_TKG
 
-This is the code to the paper Dynamic Representations of Global Crises: A Temporal Knowledge Graph For Conflicts, Trade and Value Networks
-We well add the authors after review period has passed.
+This is the code to the paper [Dynamic Representations of Global Crises: A Temporal Knowledge Graph For Conflicts, Trade and Value Networks](https://openreview.net/forum?id=LipaBQwFeZ)
 
-In the following we describe the steps needed to reproduce our results. It is splot in two parts, 1. Dataset Preprocessing and 2. TKG Forecasting.
+Please Cite our Paper: Julia Gastinger, Timo Sztyler, 
+Nils Steinert, Sabine Gruender-Fahrer, Michael Martin, Anett Schuelke, Heiner Stuckenschmidt.
+Dynamic Representations of Global Crises: A Temporal Knowledge Graph For Conflicts, Trade and Value Networks. 
+Proceedings of the Third Learning on Graphs Conference (LoG 2024), PMLR 269,
+Virtual Event, November 26–29, 2024. [Link](https://openreview.net/forum?id=LipaBQwFeZ)
+
+
+Authors: 
+Julia Gastinger (julia.gastinger (at) uni-mannheim.de), Timo Sztyler (timo.sztyler (at) neclab.eu), 
+Nils Steinert, Sabine Gruender-Fahrer, Michael Martin, Anett Schuelke, Heiner Stuckenschmidt 
+
+In the following we describe the steps needed to reproduce our results. It is split in two parts, 1. Dataset Preprocessing and 2. TKG Forecasting.
 It is not required to re-run the Dataset Preprocessing Steps. We provide the output of Dataset Preprocessing in ```/data/crisis2023```. These files can be used for TKG Forecasting.
 
 ## 1. Dataset Preprocessing 
